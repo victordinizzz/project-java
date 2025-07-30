@@ -8,6 +8,7 @@ Repositório com mini jogos e Apps em Java desenvolvidos para praticar lógica d
 
 ## Apps disponiveis
 ### Calculadora
+### Cadastro simples de Usuario
 
 ## 📂 Como executar
 
