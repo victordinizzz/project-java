@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+
+public class Main {
+  public static void main(String[] args) {
+String continuar = "s";
+int num1= 0;
+int num2= 0;
+byte opcao = 0;
+    Scanner scanner = new Scanner(System.in);
+     do{
+    System.out.println("digite um numero: ");
+    num1 = scanner.nextInt();
+    System.out.println("digite outro numero: ");
+    num2 = scanner.nextInt();
+
+    System.out.println("escolha uma opição de operação: 1-soma, 2-subtração, 3-multiplicação, 4-divisão");
+    opcao = scanner.nextByte();
+    switch (opcao){
+      case 1:
+        System.out.println("o resultado da soma é: " + (num1 + num2));
+        break;
+        case 2:
+        System.out.println("o resultado da subtração é: " + (num1 - num2));
+        break;
+        case 3:
+        System.out.println("o resultado da multiplicação é: " + (num1 * num2));
+        break;
+        case 4:
+        if(num2 !=0){
+        System.out.println("o resultado é: " + (num1 / num2));
+        }else{
+
+           System.out.println("você não pode dividir por zero, faltou na aula de matemática?");
+        };
+        break;
+        default:
+        System.out.println("opção invalida");
+    }
+       scanner.nextLine();
+       System.out.println("deseja permanecer no sistema? s/n");
+        continuar = scanner.next();
+     }while(continuar.equals("s"));
+    System.out.println("Obrigado por usar o sistema! Volte sempre !");
+
+  scanner.close();
+
+  }
+
+}
