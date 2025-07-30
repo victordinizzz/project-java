@@ -23,9 +23,7 @@ este é um jogo de adivinhação feito em Java, com quatro níveis de dificuldad
 
 Compile o arquivo Java:
 
-javac PedraPapelTesoura.java
+javac
 Execute o jogo:
-
-
 
 java ------
