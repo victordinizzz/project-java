@@ -15,4 +15,6 @@ Repositório com mini jogos em Java desenvolvidos para praticar lógica de progr
 Para rodar o jogo:
 
 javac Main.java
+
+
 java Main
