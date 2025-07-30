@@ -1,10 +1,13 @@
 # 🎮 project-java
 
-Repositório com mini jogos em Java desenvolvidos para praticar lógica de programação, estrutura de controle e interação com o usuário.
+Repositório com mini jogos e Apps em Java desenvolvidos para praticar lógica de programação, estrutura de controle e interação com o usuário.
 
 ## 🕹️ Jogo disponível
 ### Pedra, Papel e Tesoura ✊✋✌
 ### Jogo de Adivinhação 🎯
+
+## Apps disponiveis
+### Calculadora
 
 ## 📂 Como executar
 
