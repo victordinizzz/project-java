@@ -17,4 +17,4 @@ Projeto em Java para cadastrar usuários via console, armazenando nome, idade, e
 
 ## Autor
 
-Victor Leone - [github.com/seu-usuario](https://github.com/seu-usuario)
+Victor Leone 
