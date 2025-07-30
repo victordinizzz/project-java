@@ -1,0 +1,98 @@
+
+import java.util.Scanner;
+
+
+public class Main {
+  public static void main(String[] args) {
+
+    //criação projeto java, armazenamento de dados Usuarios simples.
+
+    Scanner scanner = new Scanner(System.in);
+
+    String name[]=  new String[10];
+    int idade[]= new int[10];
+    String email[]= new String[10];
+    String cpf[]= new String[10];
+    String sexo[]= new String[10];
+    int contador = 0;
+
+    System.out.println("Bem vindo ao sistema de cadastro de usuarios");
+
+    for(contador=0;contador<10;contador++){
+      //Primeira tentativa de armazenamento de dados
+    /* System.out.println("Digite seu nome: ");
+        name[contador]= scanner.nextLine();
+      
+      System.out.println("digite sua idade: ");
+      idade[contador]= scanner.nextInt();
+      
+      
+      System.out.println("digite seu email: ");
+      email[contador]= scanner.nextLine();
+
+      
+      System.out.println("digite seu cpf: ");
+      cpf[contador][14]= scanner.nextLine();
+      
+      System.out.println("digite seu sexo: ");
+      sexo[contador]= scanner.nextLine();
+      */
+      
+         do{
+         System.out.println("Digite seu nome: ");
+         name[contador] = scanner.nextLine();
+         if(name[contador].trim().isEmpty()){
+           System.out.println("você esqueceu de colocar seu nome, digite novamente");
+         }; 
+         }while(name[contador].trim().isEmpty());
+
+      do{
+         System.out.println("Digite seu idade: ");
+         idade[contador]= scanner.nextInt();
+          scanner.nextLine();
+         if(idade[contador] == 0){
+           System.out.println("você esqueceu de colocar sua idade, digite novamente");
+         }; 
+        
+         }while(idade[contador] == 0);
+         
+     
+      do {
+          System.out.println("Digite seu email: ");
+          email[contador] = scanner.nextLine();
+
+          if (email[contador].trim().isEmpty()) {
+              System.out.println("Você esqueceu de colocar seu e-mail, digite novamente");
+          }
+      } while (email[contador].trim().isEmpty());
+
+
+      
+        do{
+           System.out.println("Digite seu cpf: ");
+           cpf[contador]= scanner.nextLine();
+           if(cpf[contador].trim().isEmpty()){
+             System.out.println("você esqueceu de colocar seu cpf, digite novamente");
+           }; 
+           }while(cpf[contador].trim().isEmpty());
+
+      do{
+         System.out.println("Digite seu sexo: ");
+         sexo[contador]= scanner.nextLine();
+         if(sexo[contador].trim().isEmpty()){
+           System.out.println("você esqueceu de colocar seu sexo, digite novamente");
+         }; 
+         }while(sexo[contador].trim().isEmpty());
+      }
+
+     for(contador=0;contador<10;contador++){
+        System.out.println("nome: "+name[contador]+" idade: "+idade[contador]+" email: "+email[contador]+" cpf: "+cpf[contador]+" sexo: "+sexo[contador]);
+        System.out.println("-------------------------------------------------------------");
+     }
+
+     scanner.close();
+    
+    }
+    
+  }
+
