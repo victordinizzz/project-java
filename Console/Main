@@ -1,0 +1,373 @@
+// import 
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+  public static void main(String[] args) {
+    //criação das variaveis
+    int opcaoSystem = 0;
+    String continuarSystem = "s";
+
+
+
+    
+    //criação dos utils
+    Scanner scanner = new Scanner(System.in);
+    Random random = new Random();
+
+    do{
+      System.out.println("--------------------------------------------------");
+      System.out.println("--------------------------------------------------");
+      System.out.println("--------------------------------------------------");
+      System.out.println("");
+    System.out.println("Bem vindo ao console !!");
+     System.out.println("--------------------------------------------------");
+
+     System.out.println("Escolha um programa \n 1- calculadora \n 2- jogo de adivinhação \n 3-pedra papel tesoura \n 4- registro de usuarios");
+     opcaoSystem = scanner.nextInt();
+    
+     System.out.println("--------------------------------------------------");
+
+     System.out.println("você escolheu a opção: " + opcaoSystem);
+
+     System.out.println("--------------------------------------------------");
+
+     System.out.println("--------------------------------------------------");
+
+    switch(opcaoSystem){
+
+      case 1:
+        String continuar = "s";
+        int num1= 0;
+        int num2= 0;
+        byte opcao = 0;
+             do{
+            System.out.println("digite um numero: ");
+            num1 = scanner.nextInt();
+            System.out.println("digite outro numero: ");
+            num2 = scanner.nextInt();
+
+            System.out.println("escolha uma opição de operação: 1-soma, 2-subtração, 3-multiplicação, 4-divisão");
+            opcao = scanner.nextByte();
+            switch (opcao){
+              case 1:
+                System.out.println("o resultado da soma é: " + (num1 + num2));
+                break;
+                case 2:
+                System.out.println("o resultado da subtração é: " + (num1 - num2));
+                break;
+                case 3:
+                System.out.println("o resultado da multiplicação é: " + (num1 * num2));
+                break;
+                case 4:
+                if(num2 !=0){
+                System.out.println("o resultado é: " + (num1 / num2));
+                }else{
+
+                   System.out.println("você não pode dividir por zero, faltou na aula de matemática?");
+                };
+                break;
+                default:
+                System.out.println("opção invalida");
+            }
+               scanner.nextLine();
+               System.out.println("deseja permanecer no sistema? s/n");
+                continuar = scanner.next();
+             }while(continuar.equals("s"));
+            System.out.println("Obrigado por usar o sistema! Volte sempre !");
+
+          scanner.close();
+
+        
+        break;
+
+        
+      case 2:
+
+        int molde = 0;
+        int nun1 = 0;
+        int numberRandom = 0;
+        int numberAttempt = 1;
+        String toTry = "s";
+        int attempts = 0; 
+
+
+
+        do{
+
+          System.out.println("Vamos começar um jogo de adivinhação!");
+          System.out.println("Vamos começar digite \n 1- modo facil (0-10) \n 2- modo medio(0-25) \n 3- modo dificil(0-50) \n 4- modo expert(0-100)");
+          molde = scanner.nextInt();
+          System.out.println("você gostaria de ter quantas tentativas para acertar?");
+          attempts = scanner.nextInt();
+
+
+        if(molde == 1 || molde == 2 || molde == 3 || molde == 4 ){
+
+          System.out.println("escolha um numero");
+          nun1 = scanner.nextInt();
+          switch(molde){
+            case 1:
+              numberRandom = random.nextInt(10);
+              while(numberAttempt < attempts){
+
+              if(nun1 == numberRandom){
+                System.out.println("Parabens você acertou o numero: " + numberRandom + " com " + numberAttempt + " tentativa");
+              }else{
+                if(numberAttempt < attempts){
+                  System.out.println("Você errou o numero tente novamente");
+                  nun1 = scanner.nextInt();
+                  numberAttempt++;
+                }else{
+                  System.out.println("Você tentou todas é não acertou então pega seu banquinho e sai de fininho o numero era: " + numberRandom + " e você tentou " + numberAttempt);
+                }
+              }
+
+              }
+
+              break;
+            case 2:
+              numberRandom = random.nextInt(25);
+
+              while(numberAttempt < attempts){
+
+                if(nun1 == numberRandom){
+                  System.out.println("Parabens você acertou o numero: " + numberRandom + " com " + numberAttempt + " tentativa");
+                }else{
+                  if(numberAttempt < attempts){
+                    System.out.println("Você errou o numero tente novamente");
+                    nun1 = scanner.nextInt();
+                    numberAttempt++;
+                  }else{
+                    System.out.println("Você tentou todas é não acertou então pega seu banquinho e sai de fininho o numero era: " + numberRandom + " e você tentou " + numberAttempt);
+                  }
+                }
+
+                }
+
+              break;
+              case 3:
+              numberRandom = random.nextInt(50);
+
+              while(numberAttempt < attempts){
+
+                if(nun1 == numberRandom){
+                  System.out.println("Parabens você acertou o numero: " + numberRandom + " com " + numberAttempt + " tentativa");
+                }else{
+                  if(numberAttempt < attempts){
+                    System.out.println("Você errou o numero tente novamente");
+                    nun1 = scanner.nextInt();
+                    numberAttempt++;
+                  }else{
+                    System.out.println("Você tentou todas é não acertou então pega seu banquinho e sai de fininho o numero era: " + numberRandom + " e você tentou " + numberAttempt);
+                  }
+                }
+
+                }
+
+              break;
+              case 4:
+              numberRandom = random.nextInt(100);
+              while(numberAttempt < attempts){
+
+                if(nun1 == numberRandom){
+                  System.out.println("Parabens você acertou o numero: " + numberRandom + " com " + numberAttempt + " tentativa");
+                }else{
+                  if(numberAttempt < attempts){
+                    System.out.println("Você errou o numero tente novamente");
+                    nun1 = scanner.nextInt();
+                    numberAttempt++;
+                  }else{
+                    System.out.println("Você tentou todas é não acertou então pega seu banquinho e sai de fininho o numero era: " + numberRandom + " e você tentou " + numberAttempt);
+                  }
+                }
+
+                }
+
+
+              break;
+
+          }
+
+        }else{
+          System.out.println("Escolha um modo valido");
+        }
+
+
+
+          System.out.println("Deseja jogar novamente? (S/N)");
+          toTry = scanner.next();
+
+
+
+        }while(toTry.equalsIgnoreCase("s")); 
+        System.out.println("Obrigado por jogar!");
+        System.out.println("Game Over");
+          scanner.close();
+        
+        break;
+
+        case 3:
+        System.out.println("Vamos jogar o jogo do pedra, papel e tesoura?");
+
+        int choice = 0;
+        int choiceComputer = 0;
+        String continueGame = "s";
+
+
+
+        do{
+              System.out.println("Digite: \n 0 para Pedra \n 1 para Papel \n 2 para Tesoura\n");
+              choice = scanner.nextInt();
+              choiceComputer = random.nextInt(3);
+
+          switch(choice){
+            case 0:
+
+                  if(choiceComputer == 0){
+                    System.out.println("Empate, a maquina tambem escolheu Pedra");
+
+                  }else{
+
+                     if(choiceComputer == 1){
+                       System.out.println("haha a maquina ganhou, ela escolheu papel");
+                     }else{
+                       if(choiceComputer == 2){
+                         System.out.println("Voce ganhou, a maquina escolheu tesoura");
+                       }
+                     }
+                  }
+
+              break;
+                case 1:
+              if(choiceComputer == 0){
+                System.out.println("vix... a maquina perdeu, ela escolheu pedra");
+
+              }else{
+
+                 if(choiceComputer == 1){
+                   System.out.println("haha, deu empate, a maquina tambem escolheu papel");
+                 }else{
+                   if(choiceComputer == 2){
+                     System.out.println("haha, você perdeu, a maquina escolheu tesoura");
+                   }
+                 }
+              }
+                  break;
+
+
+                  case 2:
+
+              if(choiceComputer == 0){
+                System.out.println("haha, você perdeu, a maquina escolheu pedra");
+
+              }else{
+
+                 if(choiceComputer == 1){
+                   System.out.println("vix, a maquina perdeu, ela escolheu papel");
+                 }else{
+                   if(choiceComputer == 2){
+                     System.out.println("haha, deu empate, a maquina tambem escolheu tesoura");
+                   }
+                 }
+              }
+
+                   break;
+              default:
+                System.out.println("opção " + choice + "?  você está brincando ne? tenta de novo !! não existe essa opção");
+          }
+          System.out.println("Deseja continuar? s/n");
+          continueGame = scanner.next();
+
+
+        }while(continueGame.equals("s"));
+
+        System.out.println("haaa.. desistiu, Obrigado por jogar!");
+
+        
+        break;
+
+        
+          case 4:
+
+        String name[]=  new String[10];
+        int idade[]= new int[10];
+        String email[]= new String[10];
+        String cpf[]= new String[10];
+        String sexo[]= new String[10];
+        int contador = 0;
+
+        System.out.println("Bem vindo ao sistema de cadastro de usuarios");
+
+        for(contador=0;contador<10;contador++){
+             do{
+             System.out.println("Digite seu nome: ");
+             name[contador] = scanner.nextLine();
+             if(name[contador].trim().isEmpty()){
+               System.out.println("você esqueceu de colocar seu nome, digite novamente");
+             }; 
+             }while(name[contador].trim().isEmpty());
+
+          do{
+             System.out.println("Digite seu idade: ");
+             idade[contador]= scanner.nextInt();
+              scanner.nextLine();
+             if(idade[contador] == 0){
+               System.out.println("você esqueceu de colocar sua idade, digite novamente");
+             }; 
+
+             }while(idade[contador] == 0);
+
+
+          do {
+              System.out.println("Digite seu email: ");
+              email[contador] = scanner.nextLine();
+
+              if (email[contador].trim().isEmpty()) {
+                  System.out.println("Você esqueceu de colocar seu e-mail, digite novamente");
+              }
+          } while (email[contador].trim().isEmpty());
+
+
+
+            do{
+               System.out.println("Digite seu cpf: ");
+               cpf[contador]= scanner.nextLine();
+               if(cpf[contador].trim().isEmpty()){
+                 System.out.println("você esqueceu de colocar seu cpf, digite novamente");
+               }; 
+               }while(cpf[contador].trim().isEmpty());
+
+          do{
+             System.out.println("Digite seu sexo: ");
+             sexo[contador]= scanner.nextLine();
+             if(sexo[contador].trim().isEmpty()){
+               System.out.println("você esqueceu de colocar seu sexo, digite novamente");
+             }; 
+             }while(sexo[contador].trim().isEmpty());
+          }
+
+         for(contador=0;contador<10;contador++){
+            System.out.println("nome: "+name[contador]+" idade: "+idade[contador]+" email: "+email[contador]+" cpf: "+cpf[contador]+" sexo: "+sexo[contador]);
+            System.out.println("-------------------------------------------------------------");
+         }
+
+         scanner.close();
+        
+        break;
+
+        
+        default:
+          System.out.println("opção invalida");
+    }
+      System.out.println("--------------------------------------------------");
+      System.out.println("Deseja continuar no sistema? s/n");
+      continuarSystem = scanner.next();
+      
+    }while(continuarSystem.equals("s"));
+    
+    }
+  
+    
+    
+  }
