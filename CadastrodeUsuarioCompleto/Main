@@ -1,0 +1,287 @@
+// import 
+import java.util.Scanner;
+//import java.util.Random;
+
+public class Main {
+  public static void main(String[] args) {
+
+
+// Primeira tentativa de criação de um sistema avançado de cadastro.
+
+    //criação de variaveis
+  int opcaoEntrada = 0;
+  int quantidadeDeCadastros = 0;
+    int contadorDeLoop = 0;
+  String primeiroNome[] = new String[10];
+  String sobreNome[] = new String[10];
+  int idade[] = new int[10];
+  String cpf[] = new String[10];
+  String rg[] = new String[10];
+  String email[] = new String[10];
+  boolean validacaoDeCriacao = false;
+  String continuar = "s"; 
+  String nomeParaExclusao = "";
+  String cpfParaExclusao = "";
+    String continuarExclusao = "s";
+    
+    
+    //criação dos utils
+    Scanner scanner = new Scanner(System.in);
+    //Random random = new Random();
+
+    //Inicio do Sistema
+
+    do{
+
+    System.out.println("-----------------------------------------------");  
+    System.out.println("Bem vindo ao sistema de cadastro de clientes");
+    System.out.println("-----------------------------------------------");
+     System.out.println("Escolha uma opção: \n 1- Cadastrar cliente \n 2- Listar clientes \n  3- excluir cliente \n 4- Sair ");
+    System.out.println("-----------------------------------------------");
+
+    opcaoEntrada = scanner.nextInt();
+
+    System.out.println("-----------------------------------------------");
+    System.out.println("você escolheu a opção: " + opcaoEntrada);
+    System.out.println("-----------------------------------------------");
+
+    switch(opcaoEntrada){
+ 
+      case 1:
+              System.out.println("Digite quantos usuarios quer cadastrar:");
+              quantidadeDeCadastros = scanner.nextInt();
+              System.out.println("-----------------------------------------------");
+              System.out.println("Você escolheu cadastrar " + quantidadeDeCadastros);
+              System.out.println("-----------------------------------------------");
+              for (contadorDeLoop = 0; contadorDeLoop < quantidadeDeCadastros; contadorDeLoop++){
+               
+                do{
+                  
+                System.out.println("Digite o primeiro nome do cliente:");
+                primeiroNome[contadorDeLoop] = scanner.next();
+                  if(primeiroNome[contadorDeLoop].trim().isEmpty()){
+                    System.out.println("você esqueceu de digitar o primeiro nome");
+                    validacaoDeCriacao = false;
+                    
+                  }else{
+                    System.out.println("Nome cadastrado");
+                    validacaoDeCriacao = true;
+                  }
+                  
+                }while(validacaoDeCriacao == false);
+
+
+                 System.out.println("-----------------------------------------------");
+                
+                
+                do{
+                  
+                System.out.println("Digite o sobrenome do cliente:");
+                sobreNome[contadorDeLoop] = scanner.next();
+                  if(sobreNome[contadorDeLoop].trim().isEmpty()){
+                    System.out.println("você esqueceu de digitar o  sobrenomenome");
+                    validacaoDeCriacao = false;
+
+                  }else{
+                    System.out.println("sobrenome cadastrado");
+                    validacaoDeCriacao = true;
+                  }
+                }while(validacaoDeCriacao == false);
+
+
+                 System.out.println("-----------------------------------------------");
+                
+
+                do{
+
+                System.out.println("Digite a idade do cliente:");
+                idade[contadorDeLoop] = scanner.nextInt();
+                  if(idade[contadorDeLoop] == 0){
+                    System.out.println("você esqueceu de digitar a idade");
+                    validacaoDeCriacao = false;
+
+                  }else{
+                    System.out.println("Idade  cadastrado");
+                    validacaoDeCriacao = true;
+                    scanner.nextLine();
+                  }
+                }while(validacaoDeCriacao == false);
+
+
+                 System.out.println("-----------------------------------------------");
+
+                do{
+
+                System.out.println("Digite o cpf do cliente:");
+                cpf[contadorDeLoop]= scanner.next();
+                  if(cpf[contadorDeLoop].trim().isEmpty()){
+                    System.out.println("você esqueceu de digitar o cpf");
+                    validacaoDeCriacao = false;
+
+                  }else{
+                    System.out.println("cpf  cadastrado");
+                    validacaoDeCriacao = true;
+                  }
+                }while(validacaoDeCriacao == false);
+
+                 System.out.println("-----------------------------------------------");
+                
+                
+
+                 System.out.println("-----------------------------------------------");
+                
+                do{
+
+                System.out.println("Digite o rg do cliente:");
+                rg[contadorDeLoop]= scanner.next();
+                  if(rg[contadorDeLoop].trim().isEmpty()){
+                    System.out.println("você esqueceu de digitar o rg");
+                    validacaoDeCriacao = false;
+
+                  }else{
+                    System.out.println("rg  cadastrado");
+                    validacaoDeCriacao = true;
+                  }
+                }while(validacaoDeCriacao == false);
+
+                
+                 System.out.println("-----------------------------------------------");
+                
+                do{
+
+                System.out.println("Digite o e-mail do cliente:");
+                email[contadorDeLoop]= scanner.next();
+                  if(email[contadorDeLoop].trim().isEmpty()){
+                    System.out.println("você esqueceu de digitar o email");
+                    validacaoDeCriacao = false;
+
+                  }else{
+                    System.out.println("email  cadastrado");
+                    validacaoDeCriacao = true;
+                  }
+                }while(validacaoDeCriacao == false);
+
+
+                
+                System.out.println("-----------------------------------------------");
+
+                
+              }
+              
+        
+        
+        
+        break;
+
+                        
+
+
+        
+        case 2:
+
+        for (contadorDeLoop = 0; contadorDeLoop < quantidadeDeCadastros; contadorDeLoop++){
+          System.out.println("nome: " + primeiroNome[contadorDeLoop] + " " + sobreNome[contadorDeLoop]+"idade: " + idade[contadorDeLoop] + " cpf: " + cpf[contadorDeLoop] + " rg: " + rg[contadorDeLoop] + " e-mail: " + email[contadorDeLoop]);
+
+          System.out.println("-----------------------------------------------"); 
+        }
+        
+        break;
+
+
+
+        
+        case 3:
+          
+         System.out.println("-----------------------------------------------");
+
+        do{
+
+          boolean usuarioExiste = false;
+        
+        System.out.println("Digite o nome do cliente que deseja excluir:");
+        nomeParaExclusao = scanner.next();
+        System.out.println("para segurança digite tambem o cpf do usuario:");
+          cpfParaExclusao = scanner.next();
+          
+        for (contadorDeLoop = 0; contadorDeLoop < quantidadeDeCadastros; contadorDeLoop++){
+
+           
+
+          if(nomeParaExclusao.equals(primeiroNome[contadorDeLoop]) && cpfParaExclusao.equals(cpf[contadorDeLoop]) ){
+
+            primeiroNome[contadorDeLoop] = null;
+            sobreNome[contadorDeLoop] = null;
+            idade[contadorDeLoop] = 0;
+            cpf[contadorDeLoop] = null;
+            rg[contadorDeLoop] = null;
+            email[contadorDeLoop] = null;
+
+            System.out.println("Cliente excluido com sucesso");
+
+            usuarioExiste = true;
+            break;
+
+            
+          } 
+
+          
+
+          System.out.println("-----------------------------------------------");
+          
+        }
+          if(!usuarioExiste){
+
+            System.out.println("Cliente não encontrado");
+
+          }
+          
+          System.out.println("Deseja excluir outro cliente? (s/n)");
+          continuarExclusao = scanner.next();
+
+        }while(continuarExclusao.equals("s"));
+
+
+
+
+
+        
+        break;
+
+
+        
+        case 4:
+        System.out.println("Saindo do sistema");
+        System.exit(0);
+        
+        break;
+
+
+
+
+        
+      default:
+        System.out.println("Opção inválida");
+        
+
+
+
+        
+    }
+    
+     System.out.println("Deseja continuar? no sistema (s/n)");
+      continuar = scanner.next();
+
+    }while(continuar.equals("s"));
+
+
+
+      
+    }
+  
+    
+    
+  }
+
+
+
+
